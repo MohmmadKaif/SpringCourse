@@ -13,12 +13,20 @@ public class MyApp {
 	 * The container is responsible for interacting with configuration file and provide us the object.  
 	 * */	
     ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("ApplicationContext.xml");
-	//Here we are getting the bean(i.e object. Bean and Object are same thing).  
-    //Notice we did not use new keyword here to create object.Object is provided by the spring container.
-    //This is what is known ad Inversion Of Control(IOC).
-    Coach coach= context.getBean("MyCoach",Coach.class);
+	
+    
+    /*
+     * Now our all coach classes have a parameterized constructor which is used to set the object of DietPlanner.
+     * But if you see here we are not using 'new' key word to create the object of coach.
+     * Then how are we calling the constructor.
+     * That is being done by spring container itself.
+     * This is known as constructor injection
+     * Please see applicationContext.xml file for knowing the configuration for constructor injection.
+    */
+    Coach coach= context.getBean("MyBaseBallCoach",Coach.class);
 	
 	 coach.getWhatToDo();
+	 coach.getDietPlannerConsultation();
 	 context.close();
 	 return;
 	}

@@ -1,6 +1,5 @@
-**************************This is our spring tutorial project********************************************
+***********************************This Is Our Spring Tutorial Project********************************************
 
-Now in this example we have Demonstrated Inversion Of Control.
-Inversion of control is basically a concept of getting objects from spring container rather than getting it by hard coding 
-it using new keyword.
-This example demonstrates how to do it.
+Now in this example we have Demonstrated Constructor Dependency Injection.
+In constructor injection we do not have to call constructor in traditional way i.e using 'new' keyword. 
+Instead the constructor is called by spring container itself.

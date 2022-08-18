@@ -7,8 +7,28 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+<!-- This is our spring configuration file.The name of this file in our case is applicationContext.xml.Any name can be given.
+-->
 
-<bean  id="MyCoach"  class="com.TestingSpring.TrackCoach"></bean>
+
+<!--
+1)Now here we are defining our bean.
+2)The syntax is as given below.
+3)We have a bean tag to define a bean.
+4)In that bean tag we have two attributes.One is id and other one is class.
+5)The id attribute is nothing but the name of that bean.This bean will be addressed with this id wherever necessary.
+6)The class attribute is used to specify the class name of which object we want to create.
+-->
+
+<bean id="planner" class=" com.TestingSpring.DietPlanner" ></bean>
+
+<bean id="MyBaseBallCoach" class="com.TestingSpring.TrackCoach">
+<constructor-arg  ref="planner"/>  
+</bean>
+
+<bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach">
+<constructor-arg  ref="planner"/>  
+</bean>
 
 
 

@@ -12,19 +12,24 @@
 
 
 <!--
-1)Now here we are defining our bean.
-2)The syntax is as given below.
-3)We have a bean tag to define a bean.
-4)In that bean tag we have two attributes.One is id and other one is class.
-5)The id attribute is nothing but the name of that bean.This bean will be addressed with this id wherever necessary.
-6)The class attribute is used to specify the class name of which object we want to create.
+Here we will see the configuration for constructor injection.
 -->
-<bean id="MyCoach" class="com.TestingSpring.TrackCoach"></bean>
 
 
+<!-- First of all here we created a bean for our DietPlanner class -->
+<bean id="planner" class=" com.TestingSpring.DietPlanner" ></bean>
 
+<!-- Now to inject the constructor we specify it in our beans which are dependent on the object of DietPlanner -->
+<bean id="MyBaseBallCoach" class="com.TestingSpring.TrackCoach">
+<!-- This is how we do it...using <constructor-arg/> tag inside our bean -->
+<constructor-arg  ref="planner"/>  
+</bean>
 
-    
+<!-- same thing is done here as well -->
+<bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach">
+<constructor-arg  ref="planner"/>  
+</bean>
+
 </beans>
 
 
