@@ -1,0 +1,6 @@
+**************************This is our spring tutorial project********************************************
+
+Now in this example we have Demonstrated Inversion Of Control.
+Inversion of control is basically a concept of getting objects from spring container rather than getting it by hard coding 
+it using new keyword.
+This example demonstrates how to do it.
