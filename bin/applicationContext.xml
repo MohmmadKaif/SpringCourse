@@ -12,28 +12,31 @@
 
 
 <!--
-1)Now here we are defining our bean.
-2)The syntax is as given below.
-3)We have a bean tag to define a bean.
-4)In that bean tag we have two attributes.One is id and other one is class.
-5)The id attribute is nothing but the name of that bean.This bean will be addressed with this id wherever necessary.
-6)The class attribute is used to specify the class name of which object we want to create.
+Here we will see the configuration for constructor injection.
 -->
 
-<bean id="planner" class=" com.TestingSpring.DietPlanner" ></bean>
 
-<bean id="MyBaseBallCoach" class="com.TestingSpring.TrackCoach">
-<constructor-arg  ref="planner"/>  
+<!-- First of all here we created a bean for our DietPlanner class -->
+<bean id="DP" class=" com.TestingSpring.DietPlanner" ></bean>
+
+<!-- Now to inject the setter we specify it in our beans which are dependent on the object of DietPlanner -->
+<bean id="MyBaseBallCoach" class="com.TestingSpring.BaseBallCoach">
+<!-- 1)This is how we do it...using <property/> tag inside our bean 
+     
+    2)Here you will see that we have two attributes.
+      First one is 'name'.Now in name parameter you have to pass the name of the setter excluding the set string.
+      For example your setter name is setPlanner() then you will either give name value as Parameter or parameter
+      Refer our current example.
+    3)Now the attribute is ref.In 'ref' we have to give the bean id of the class of which we want to set the bean inside the setter.  
+-->
+<property name="planner" ref="DP"  />  
 </bean>
 
+<!-- same thing is done here as well -->
 <bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach">
-<constructor-arg  ref="planner"/>  
+<property name="planner" ref="DP"  />  
 </bean>
 
-
-
-
-    
 </beans>
 
 
