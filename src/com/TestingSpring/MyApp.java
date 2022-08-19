@@ -21,12 +21,8 @@ public class MyApp {
      * While creating the bean itself the spring container will create run the setter method and also it will set the value by itself.
      * This is what is the concept of setter injection with value initialization. 
     */
-     BaseBallCoach coach= context.getBean("MyBaseBallCoach",BaseBallCoach.class);
-     BaseBallCoach coach2= context.getBean("MyBaseBallCoach",BaseBallCoach.class);
-     if(coach==coach2)System.out.println("Both refer to same Bean");else System.out.println("Both refer to different Beans");
+     Coach coach= context.getBean("MyTrackCoach",Coach.class);
      coach.getWhatToDo();
-	 coach.getDietPlannerConsultation();
-	 System.out.println(coach.getFees());
 	 context.close();
 	 return;
 	 

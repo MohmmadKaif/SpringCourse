@@ -9,46 +9,14 @@
     
  <!-- This is our spring configuration file.The name of this file in our case is applicationContext.xml.Any name can be given.-->
 
-
-
-<!-- 
-Now here we are loading the property file (in our case it sports.properties)
-This is done using '<context:property-placeholder/>' tag.
-Below you can see it..
--->
-<context:property-placeholder  location="classpath:sports.properties"/>
-
-
-
-<!--
-Here we will see the configuration for constructor injection.
--->
-
-
-<!-- First of all here we created a bean for our DietPlanner class -->
-<bean id="DP" class=" com.TestingSpring.DietPlanner" ></bean>
-
-<!-- Now to inject the setter we specify it in our beans which are dependent on the object of DietPlanner -->
-<bean id="MyBaseBallCoach" class="com.TestingSpring.BaseBallCoach" scope="prototype">
-<property name="planner" ref="DP"  /> 
-<!-- 
-1)Here we are injecting a setter with values.
-2)This is how we do it.
-3)In name property we have to give the setter name by excluding the set part.You can ignore the case of first letter but not the other letters.
-4) Here you can see that we that we are not hard coding the value field.
-5)Instead we are getting it form sports.properties file.
-6)Please refer to the syntax given below.
-7)Syntax:  ${inside we will pass the variable name given inside the properties file}
- -->
-<property name="fees" value="${BaseBallCoach.salary}"/> 
+ <!-- This example demonstrates the use of Spring annotation and how to achieve Inversion Of Control using annotation.
+      Until now we were doing all the things by setting doing configuration inside the configuration file.
+      But now we will use annotation.  
  
-</bean>
+      But to use the annotation we will first have to enable the component scanning.And below we are doing that.  
+ -->
+<context:component-scan base-package="com.TestingSpring"></context:component-scan>
 
-<!-- same thing is done here as well -->
-<bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach" >
-<property name="planner" ref="DP"  />  
-<property name="fees" value="${TrackCoach.salary}"/>
-</bean>
 
 </beans>
 
