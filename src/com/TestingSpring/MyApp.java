@@ -18,12 +18,13 @@ public class MyApp {
     /*
      * Now this our driver class.
      * Here we Creating the bean of BaseBallCoach.
-     * While creating the bean itself the spring container will create run the setter method and also it will pass the object DietPlanner by itself.
-     * This is what is the concept of setter injection 
+     * While creating the bean itself the spring container will create run the setter method and also it will set the value by itself.
+     * This is what is the concept of setter injection with value initialization. 
     */
-     Coach coach= context.getBean("MyBaseBallCoach",Coach.class);
+     BaseBallCoach coach= context.getBean("MyBaseBallCoach",BaseBallCoach.class);
 	 coach.getWhatToDo();
 	 coach.getDietPlannerConsultation();
+	 System.out.println(coach.getFees());
 	 context.close();
 	 return;
 	}

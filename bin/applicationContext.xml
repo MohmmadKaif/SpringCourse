@@ -21,20 +21,20 @@ Here we will see the configuration for constructor injection.
 
 <!-- Now to inject the setter we specify it in our beans which are dependent on the object of DietPlanner -->
 <bean id="MyBaseBallCoach" class="com.TestingSpring.BaseBallCoach">
-<!-- 1)This is how we do it...using <property/> tag inside our bean 
-     
-    2)Here you will see that we have two attributes.
-      First one is 'name'.Now in name parameter you have to pass the name of the setter excluding the set string.
-      For example your setter name is setPlanner() then you will either give name value as Parameter or parameter
-      Refer our current example.
-    3)Now the attribute is ref.In 'ref' we have to give the bean id of the class of which we want to set the bean inside the setter.  
--->
-<property name="planner" ref="DP"  />  
+<property name="planner" ref="DP"  /> 
+<!-- 
+1)Here we are injecting a setter with values.
+2)This is how we do it.
+3)In name property we have to give the setter name by excluding the set part.You can ignore the case of first letter but not the other letters.
+ -->
+<property name="fees" value="28000"/> 
+ 
 </bean>
 
 <!-- same thing is done here as well -->
 <bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach">
 <property name="planner" ref="DP"  />  
+<property name="fees" value="10000"/>
 </bean>
 
 </beans>
