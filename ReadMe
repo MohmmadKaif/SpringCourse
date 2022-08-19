@@ -1,12 +1,2 @@
 ***********************************This Is Our Spring Tutorial Project********************************************
-
-Now in this example we have Demonstrated Constructor Dependency Injection.
-In setter injection we do not have to call setter methods explicitly as done in traditional java programming practicse. 
-Instead the setter is called by spring container itself.
-This is known as Setter injection.
-
-
-***************************************IMPORTANT**************************************************************
-Remember that the spring container will run the setter for the all specified beans in the applicationContext.xml
-Thus all the beans where we have injected the setter class will run the setter class.
-Run this program and you will understand.
+In this example we will learn how to set the values in setter injection using properties file.
