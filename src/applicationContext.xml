@@ -29,7 +29,7 @@ Here we will see the configuration for constructor injection.
 <bean id="DP" class=" com.TestingSpring.DietPlanner" ></bean>
 
 <!-- Now to inject the setter we specify it in our beans which are dependent on the object of DietPlanner -->
-<bean id="MyBaseBallCoach" class="com.TestingSpring.BaseBallCoach">
+<bean id="MyBaseBallCoach" class="com.TestingSpring.BaseBallCoach" scope="prototype">
 <property name="planner" ref="DP"  /> 
 <!-- 
 1)Here we are injecting a setter with values.
@@ -45,7 +45,7 @@ Here we will see the configuration for constructor injection.
 </bean>
 
 <!-- same thing is done here as well -->
-<bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach">
+<bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach" >
 <property name="planner" ref="DP"  />  
 <property name="fees" value="${TrackCoach.salary}"/>
 </bean>

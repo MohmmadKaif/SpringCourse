@@ -22,11 +22,14 @@ public class MyApp {
      * This is what is the concept of setter injection with value initialization. 
     */
      BaseBallCoach coach= context.getBean("MyBaseBallCoach",BaseBallCoach.class);
-	 coach.getWhatToDo();
+     BaseBallCoach coach2= context.getBean("MyBaseBallCoach",BaseBallCoach.class);
+     if(coach==coach2)System.out.println("Both refer to same Bean");else System.out.println("Both refer to different Beans");
+     coach.getWhatToDo();
 	 coach.getDietPlannerConsultation();
 	 System.out.println(coach.getFees());
 	 context.close();
 	 return;
+	 
 	}
 
 }

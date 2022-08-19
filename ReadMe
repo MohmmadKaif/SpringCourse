@@ -1,2 +1,7 @@
 ***********************************This Is Our Spring Tutorial Project********************************************
-In this example we will learn how to set the values in setter injection using properties file.
+1)In this example we will learn about the scope property associated with a bean..
+2)The scope property specifies how many copies of beans will be created.
+3) For now we will see two properties 
+   1)singleton
+   2)prototype 
+4) There are more we will see  while studying MVC.

@@ -29,19 +29,23 @@ Here we will see the configuration for constructor injection.
 <bean id="DP" class=" com.TestingSpring.DietPlanner" ></bean>
 
 <!-- Now to inject the setter we specify it in our beans which are dependent on the object of DietPlanner -->
-<bean id="MyBaseBallCoach" class="com.TestingSpring.BaseBallCoach">
+<bean id="MyBaseBallCoach" class="com.TestingSpring.BaseBallCoach" scope="prototype">
 <property name="planner" ref="DP"  /> 
 <!-- 
 1)Here we are injecting a setter with values.
 2)This is how we do it.
 3)In name property we have to give the setter name by excluding the set part.You can ignore the case of first letter but not the other letters.
+4) Here you can see that we that we are not hard coding the value field.
+5)Instead we are getting it form sports.properties file.
+6)Please refer to the syntax given below.
+7)Syntax:  ${inside we will pass the variable name given inside the properties file}
  -->
 <property name="fees" value="${BaseBallCoach.salary}"/> 
  
 </bean>
 
 <!-- same thing is done here as well -->
-<bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach">
+<bean id="MyTrackCoach" class="com.TestingSpring.TrackCoach" >
 <property name="planner" ref="DP"  />  
 <property name="fees" value="${TrackCoach.salary}"/>
 </bean>
