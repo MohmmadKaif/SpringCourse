@@ -15,6 +15,7 @@ public class MyApp {
     ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
 	
      Coach coach= context.getBean("MyTrackCoach",Coach.class);
+     
      coach.getWhatToDo();
      coach.getDietPlannerConsultation();
 	 context.close();

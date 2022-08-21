@@ -12,10 +12,11 @@ Thus we are overriding the getWhatToDo() method.
 public class TrackCoach extends Coach {
 	private DietPlanner planner;
 	
-/*Now here we are injecting our constructor using '@Autowired' annotation*/	
+/*Now here we are injecting our setter using '@Autowired' annotation*/	
 	@Autowired
-	public TrackCoach(DietPlanner planner) {
-		this.planner=planner;
+    public void setPlanner(DietPlanner planner) {
+		System.out.println("TrackCoach: Inside this setter");
+		this.planner = planner;
 	}
 	
 	@Override
@@ -24,6 +25,7 @@ public class TrackCoach extends Coach {
     	return;
     }
 	
+
 	public void getDietPlannerConsultation() {
 		   System.out.println("Increase your fat and protein consumption along with this also increase the intake of water.");
 		}
