@@ -15,7 +15,7 @@
 	<classpathentry kind="lib" path="jarLib/spring-beans-5.3.8.jar"/>
 	<classpathentry kind="lib" path="jarLib/spring-beans-5.3.8-javadoc.jar"/>
 	<classpathentry kind="lib" path="jarLib/spring-beans-5.3.8-sources.jar"/>
-	<classpathentry kind="lib" path="jarLib/spring-context-5.3.8.jar"/>
+	<classpathentry kind="lib" path="jarLib/spring-context-5.3.8.jar" sourcepath="C:/Users/Mohammad Kaif/.m2/repository/org/springframework/spring-context/5.3.8/spring-context-5.3.8-sources.jar"/>
 	<classpathentry kind="lib" path="jarLib/spring-context-5.3.8-javadoc.jar"/>
 	<classpathentry kind="lib" path="jarLib/spring-context-5.3.8-sources.jar"/>
 	<classpathentry kind="lib" path="jarLib/spring-context-indexer-5.3.8.jar"/>

@@ -1,6 +1,6 @@
 package com.TestingSpring;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MyApp {
 
@@ -8,18 +8,12 @@ public class MyApp {
     
 	/*
 	 * Now here we are creating a Spring Container.
-	 * ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("ApplicationContext.xml") this how we create a spring container. 
-	 * ApplicationContext.xml is our configuration file name. This name can be any thing.
-	 * The container is responsible for interacting with configuration file and provide us the object.  
+	 * Now here as we are not using configuration(xml) file the process of creating the context object is given below.It obtained using AnnotationConfigApplicationContext class
+     * The container is responsible for interacting with configuration file and provide us the object.  
 	 * */	
-    ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
-	
-     Coach coach= context.getBean("MyTrackCoach",Coach.class);
-     
-     coach.getWhatToDo();
-     coach.getDietPlannerConsultation();
-	 context.close();
-	 return;
+    AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(SportsConfig.class);
+    SwimCoach coach= context.getBean("swimCoach",SwimCoach.class);
+    coach.getDietPlannerConsultation();
 	 
 	}
 
